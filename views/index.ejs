@@ -1,0 +1,26 @@
+<%- include('./partials/header.ejs') %>
+<body>
+    <h1>Welcome to the Soul Blogs</h1>
+
+    <%- include('./partials/navbar.ejs') %>
+
+    <div class="blogs_content">
+        <% if (blogs.length > 0) {%>
+            <% blogs.forEach(blog => {%>
+            
+                <h3 class="title"><%= blog.title %></h3>
+                <p class="snippet"><%= blog.snippet %></p>
+
+            <% })%>
+        <% } else {%>
+            <p>There are no blogs to Display!</p>
+        <%} %>
+    </div>
+
+    <!--Footer-->
+    <!--Reason for using Hyphen is that '=' outputs strings but not special characters
+        but '-' does outputs them-->
+    <%- include('./partials/footer.ejs') %>
+
+</body>
+</html>
