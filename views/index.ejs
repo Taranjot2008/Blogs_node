@@ -1,8 +1,12 @@
 <%- include('./partials/header.ejs') %>
 <body>
-    <h1>Welcome to the Soul Blogs</h1>
+    <div class="head_navbar">
+        <a href="/" style="text-decoration: none;"><h1 id="heading_1">Soul Blogs</h1></a>
 
-    <%- include('./partials/navbar.ejs') %>
+        <%- include('./partials/navbar.ejs') %>
+    </div>
+
+    <hr id="hr-1">
 
     <div class="blogs_content">
         <% if (blogs.length > 0) {%>
