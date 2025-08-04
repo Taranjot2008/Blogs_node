@@ -1,24 +1,37 @@
 const express = require('express');
-const app = express();
 const morgan = require('morgan')
+const mongoose = require('mongoose');
+const Blog = require('./models/blog');
+
+//express app
+const app = express();
+
+//mongoose database
+const dbURI = 'mongodb+srv://taranjotscience:Mongodb2025@blogcluster.gkuxfpd.mongodb.net/first_database?retryWrites=true&w=majority&appName=BlogCluster'
+mongoose.connect(dbURI, {usenewUrlParser: true, useUnifiedTopology: true})
+    .then((result) => app.listen(3000))
+    .catch((err) => console.log(err));
+
 app.set('view engine', 'ejs');
-app.listen(3000);
+
+//middleware
 app.use(morgan('dev'));
 app.use(express.static('public'));
 
-app.get('/blogs', (req, res) => {
-
-    const blogs = [
-        {title: 'Isaac Newton', snippet: 'An apple fell on my head'},
-        {title: 'Paul Dirac', snippet: 'Dirac Equation is more than it looks'},
-        {title: 'Richard P. Feynman', snippet: 'Differentiate under the integral sign'}
-    ]
-
-    res.render('index', {title: 'Home', blogs});
-});
 
 app.get('/', (req, res) => {
+
     res.redirect('/blogs');
+});
+
+app.get('/blogs', (req, res) => {
+    Blog.find().sort({createdAt: -1})
+        .then((result) => {
+            res.render('index' , {title: 'All Blogs', blogs: result});
+        })
+        .catch((err) => {
+            console.log(err);
+        });
 
 })
 
