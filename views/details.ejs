@@ -9,11 +9,14 @@
     <hr id="hr-1">
 
     <div class="details-content">
-        <h2><%= blog.title %></h2>
+        <div class="details-header">
+            <h2><%= blog.title %></h2>
+            <a class="delete" data-doc="<%= blog._id %>">delete</a>
+        </div>
+        
         <div class="content">
             <p><%= blog.body %></p>
         </div>
-        <a class="delete" data-doc="<%= blog._id %>">delete</a>
     </div>
 
     <!--Footer-->
@@ -21,5 +24,21 @@
         but '-' does outputs them-->
     <%- include('./partials/footer.ejs') %>
 
+
+    <script>
+        const trashcan = document.querySelector('a.delete')
+
+        trashcan.addEventListener('click', (event) => {
+
+            const endpoint = `/blogs/${trashcan.dataset.doc}`
+
+            fetch(endpoint, {
+                method: 'DELETE'
+            })
+                .then((response) => response.json())
+                .then((data) => {window.location.href = '/blogs'})
+                .catch((err) => {console.log(err)})
+        })
+    </script>
 </body>
 </html>

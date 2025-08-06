@@ -43,16 +43,17 @@ body{
 li{
     width: 50px;
     height: 30px;
+    font-size: 1.5rem;
 }
 
 
-a{
+.nav-a{
     text-decoration: none;
     color: #2196f3;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-a:hover{
+.nav-a:hover{
     text-decoration: underline;
     text-underline-position: below;
     text-underline-offset: 10px;
@@ -72,15 +73,30 @@ a:hover{
     gap: 0.5em;
 }
 
+#single{
+    text-decoration: none;
+    color: #2196f3;
+}
+
+.title:hover{
+    color: #2196f3;
+    font-size: 2.2em;
+    transition: all 0.1s ease-in-out;
+}
+
 .title{
     font-size: 2em;
     font-family: 'Sansation';
+    color: black;
+    margin-block: 10px;
+    text-transform: capitalize;
 }
 
 .snippet{
     font-size: 1.2em;
     font-family: Georgia, 'Times New Roman', Times, serif;
     margin-bottom: 5%;
+    color: black;
 }
 
 .create-blog{
@@ -138,6 +154,59 @@ button{
     border-radius: 2em;
     border: none;
     background-color: coral;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: #ee764a;
+    transition: all 0.3s ease-in-out;
+}
+
+.details-content{
+    margin-top: 5%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.details-header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.details-header h2{
+    font-size: 2.5em;
+    font-family: Inter;
+    color: black;
+    text-transform: capitalize;
+}
+
+.content{
+    font-size: 1.2em;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 3% 3%;
+    max-width: fit-content;
+}
+
+.delete{
+    width: 80px;
+    height: 44px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: sans-serif;
+    border-radius: 2rem;
+}
+
+.delete:hover{
+    border: 2px red solid;
+    cursor: pointer;
 }
 
 
