@@ -107,8 +107,128 @@ li{
     margin-top: 2%;
 }
 
-#about-body{
-    width: 72%;
+.about-body{
+    width: 80%;
+    margin-top: 4%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#about-p{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    margin-right: 4%;
+    font-family: sans-serif;
+}
+
+#about-animation{
+    width: 60%;
+    margin-left: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0,0,0,0.3);
+    background-color: white;
+    border-radius: 1em;
+}
+
+#about-animation:before{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(-38deg, #e81cff 0%, #40c9ff 100% );
+    transform: translate3d(-8px, 0, 0) scale(0.98);
+    filter: blur(30px);
+    opacity: var(0.67);
+    transition: opacity 0.3s ease-in-out;
+    border-radius: inherit;
+}
+
+#about-animation:after{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    border-radius: inherit;
+}
+
+.body-404{
+    margin: 3.6% 0 3.6% 0;
+    width: 100%;
+    height: 76vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
+#errorcode-404{
+    font-size: 3.2em;
+    font-family: 'Lexend';
+    color: #265bff;
+    text-transform: capitalize;
+}
+
+.home-link{
+    text-decoration: none;
+    font-size: 1.5em;
+    font-family: 'Sansation';
+    color: black;
+}
+
+.home-link:hover{
+    color: #265bff;
+    text-decoration: underline;
+    text-underline-position: below;
+    text-underline-offset: 10px;
+    transition: text-decoration 0.3s ease-in-out;
+}
+
+#animation-404{
+    width: 30%;
+    aspect-ratio: 1/1;
+    padding: 1em;
+    border-radius: 50%;
+    background-color: white;
+}
+
+#animation-404:before{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(-38deg, #e81cff 0%, #40c9ff 100% );
+    transform: translate3d(-8px, 0, 0) scale(0.98);
+    filter: blur(30px);
+    opacity: var(0.67);
+    transition: opacity 0.3s ease-in-out;
+    border-radius: inherit;
+}
+
+#animation-404:after{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    border-radius: inherit;
 }
 
 .create-blog{
@@ -246,12 +366,9 @@ button:hover{
 
 
 footer{
-    position: fixed;
-    left: 0;
-    bottom: 0;
     width: 100%;
     display: flex;
     justify-content: center;
     height: 5vh;
-    margin-top: 10%;
+    margin-top: 4%;
 }
