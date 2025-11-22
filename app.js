@@ -7,8 +7,7 @@ const blogRoutes = require('./routes/blogRoutes');
 const app = express();
 
 //mongoose database
-const dbURI = 'mongodb+srv://taranjotscience:Mongodb2025@blogcluster.gkuxfpd.mongodb.net/first_database?retryWrites=true&w=majority&appName=BlogCluster'
-mongoose.connect(dbURI, {usenewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true})
     .then((result) => app.listen(3000))
     .catch((err) => console.log(err));
 
