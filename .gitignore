@@ -1,1 +1,5 @@
-app.js
+#Ignore all .env files
+*.env
+
+#Ignore a folder
+/node_modules
